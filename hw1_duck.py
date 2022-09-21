@@ -1,4 +1,5 @@
 def choose_option():
+    """Функция для выбора варианта ответа"""
     option = ''
     options = {'да': True, 'нет': False}
     while option not in options:
