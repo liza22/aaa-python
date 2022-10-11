@@ -1,5 +1,7 @@
 from typing import Callable
 
+INPUT_CSV_PATH = 'Corp_Summary.csv'
+
 
 def print_hierarchy(csv_path: str) -> None:
     """
@@ -77,6 +79,5 @@ def print_menu() -> Callable[[str], None]:
 
 
 if __name__ == '__main__':
-    input_csv_path = 'Corp_Summary.csv'
     func_to_execute = print_menu()
-    func_to_execute(input_csv_path)
+    func_to_execute(INPUT_CSV_PATH)
