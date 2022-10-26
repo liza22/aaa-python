@@ -1,4 +1,5 @@
 import json
+from keyword import iskeyword
 
 LESSON_STR = """{
     "title": "python",
@@ -12,7 +13,7 @@ LESSON_STR = """{
 CORGI_STR = """{
     "title": "Вельш-корги",
     "price": 1000,
-    "category": "dogs",
+    "class": "dogs",
     "location": {
         "address": "сельское поселение Ельдигинское, \
         поселок санатория Тишково, 25"
@@ -35,13 +36,12 @@ class DotAttribute:
 
     def __init__(self, obj: dict):
         for key, value in obj.items():
+            if iskeyword(key):
+                key += '_'
             if isinstance(value, dict):
-                self.__setattr__(key, DotAttribute(value))
+                setattr(self, key, DotAttribute(value))
             else:
-                self.__setattr__(key, value)
-
-    def __setattr__(self, key: str, value: (str, list, dict)):
-        self.__dict__[key] = value
+                setattr(self, key, value)
 
 
 class Advert(ColorizeMixin, DotAttribute):
@@ -87,6 +87,6 @@ if __name__ == '__main__':
 
     corgi = json.loads(CORGI_STR)
     corgi_ad = Advert(corgi)
-    print(corgi_ad.category)
+    print(corgi_ad.class_)
 
     print(corgi_ad)
