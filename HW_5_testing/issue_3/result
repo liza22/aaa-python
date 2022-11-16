@@ -1,0 +1,9 @@
+test_cities (issue_3.test_one_hot_encoder_unittest.TestEncoder) ... ok
+test_dimensions (issue_3.test_one_hot_encoder_unittest.TestEncoder) ... ok
+test_empty_entry (issue_3.test_one_hot_encoder_unittest.TestEncoder) ... ok
+test_return_type (issue_3.test_one_hot_encoder_unittest.TestEncoder) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
