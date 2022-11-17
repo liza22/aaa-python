@@ -15,7 +15,10 @@ class TestEncoder(unittest.TestCase):
 
     def test_dimensions(self):
         fruits = ['apple', 'orange', 'apple', 'apple', 'orange', 'pineapple']
-        dimension = len(fit_transform(fruits)[0][1])
+        result_list = fit_transform(fruits)
+        result_list_example = result_list[0]
+        result_binary_list = result_list_example[1]
+        dimension = len(result_binary_list)
         self.assertTrue(dimension == len(set(fruits)))
 
     def test_return_type(self):

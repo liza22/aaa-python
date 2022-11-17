@@ -15,7 +15,10 @@ def test_cities():
 
 def test_dimensions():
     fruits = ['apple', 'orange', 'apple', 'apple', 'orange', 'pineapple']
-    dimension = len(fit_transform(fruits)[0][1])
+    result_list = fit_transform(fruits)
+    result_list_example = result_list[0]
+    result_binary_list = result_list_example[1]
+    dimension = len(result_binary_list)
     assert dimension == len(set(fruits))
 
 
