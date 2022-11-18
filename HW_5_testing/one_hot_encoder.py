@@ -1,7 +1,7 @@
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 
-def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
+def fit_transform(*args: List[str]) -> List[Tuple[str, List[int]]]:
     """
     fit_transform(iterable)
     fit_transform(arg1, arg2, *args)
@@ -13,11 +13,12 @@ def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
     uniq_categories = set(categories)
     bin_format = f'{{0:0{len(uniq_categories)}b}}'
 
-    seen_categories = dict()
+    seen_categories: Dict[str, list] = dict()
     transformed_rows = []
 
     for cat in categories:
-        bin_view_cat = (int(b) for b in bin_format.format(1 << len(seen_categories)))
+        bin_view_cat = (int(b)
+                        for b in bin_format.format(1 << len(seen_categories)))
         seen_categories.setdefault(cat, list(bin_view_cat))
         transformed_rows.append((cat, seen_categories[cat]))
 
