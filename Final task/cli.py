@@ -1,6 +1,7 @@
 import click
-from pizza import Pizza, PizzaSize
+
 import service
+from pizza import Pizza, PizzaSize
 
 
 def get_pizza_by_name(pizza_name: str, big: bool) -> Pizza:

@@ -14,7 +14,5 @@ def test_equal_diff_size():
 
 
 def test_pizza_dict():
-    expected = {'Margherita': 'tomato sauce, mozzarella, tomatoes'}
+    expected = {"Margherita": "tomato sauce, mozzarella, tomatoes"}
     assert Margherita().dict() == expected
-
-

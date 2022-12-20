@@ -1,10 +1,10 @@
-from service import bake, delivery, pickup
 from pizza import Margherita
+from service import bake, delivery, pickup
 
 
 def test_bake(capsys):
     bake(Margherita())
-    captured = capsys.readouterr().out.split('\n')
+    captured = capsys.readouterr().out.split("\n")
     bake_output = captured[0]
     log_output = captured[1]
     assert bake_output == "Приготовлена Margherita размера L"
@@ -13,7 +13,7 @@ def test_bake(capsys):
 
 def test_delivery(capsys):
     delivery(Margherita())
-    captured = capsys.readouterr().out.split('\n')
+    captured = capsys.readouterr().out.split("\n")
     delivery_output = captured[0]
     log_output = captured[1]
     assert delivery_output == "Доставка пиццы Margherita"
@@ -22,9 +22,8 @@ def test_delivery(capsys):
 
 def test_pickup(capsys):
     pickup(Margherita())
-    captured = capsys.readouterr().out.split('\n')
+    captured = capsys.readouterr().out.split("\n")
     pickup_output = captured[0]
     log_output = captured[1]
     assert pickup_output == "Пицца Margherita готова к самовывозу"
     assert log_output.startswith("\U0001F3E0 Забрали за")
-
