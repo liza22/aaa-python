@@ -8,7 +8,8 @@ def get_pizza_by_name(pizza_name: str, big: bool) -> Pizza:
     """
     Ищет класс пиццы с запрашиваемым названием.
     Возвращает экземпляр найденного класса, если такой есть.
-    Иначе кидает исключение"""
+    Иначе кидает исключение
+    """
     for pizza in Pizza.__subclasses__():
         if pizza.__name__.lower() == pizza_name:
             return pizza(PizzaSize.BIG) if big else pizza()

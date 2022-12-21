@@ -4,7 +4,7 @@ from typing import Callable
 from pizza import Pizza
 
 
-def log(tmpl: str) -> Callable:
+def log(tmpl: str = "") -> Callable:
     """
     Декоратор для логирования времени выполнения функции.
     Принимает шаблон лога.
@@ -25,7 +25,7 @@ def log(tmpl: str) -> Callable:
     return decorator
 
 
-@log("")
+@log()
 def bake(pizza: Pizza):
     """Готовит пиццу"""
     print(f"Приготовлена {pizza.__class__.__name__} "
